@@ -2,7 +2,7 @@ import { HomepageData } from '@/types/HomepageData';
 
 export const Data : HomepageData = {
   title: 'Ricardo Balk',
-  subtitle: 'Software Engineer',
+  subtitle: 'Front-end Engineer',
   description: 'Passionate about modern web development technologies, creating beautiful user interfaces and writing clean & re-usable code.',
   avatar: '/images/avatar.jpg',
 }
