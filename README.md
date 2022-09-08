@@ -1,9 +1,6 @@
-# Nuxt 3 Starter Kit
+# Personal Link Collection
 
-This is a Nuxt 3 Starter Kit with Vite, Vue 3, TypeScript, PostCSS and TailwindCSS!
-
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
-
+This is my personal link collection, built with Vite, Vue 3, TypeScript, PostCSS and TailwindCSS!
 ## Setup
 
 Make sure to install the dependencies
@@ -22,10 +19,16 @@ yarn dev
 
 ## Production
 
-Build the application for production:
+Build the static page with:
 
 ```bash
-yarn build
+yarn generate
 ```
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+Then, put it on a webserver. The real pros put it on the server with `rsync`:
+  
+```bash
+rsync -avz --delete dist/ username@some-server:/var/www/domains/example.com
+```
+
+You could also use third-party hosting for it. For example, Vercel, Netlify, or Heroku.
