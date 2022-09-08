@@ -1,6 +1,7 @@
 # Personal Link Collection
 
-This is my personal link collection, built with Vite, Vue 3, TypeScript, PostCSS and TailwindCSS!
+This is my personal link collection, built with Nuxt 3 (Vite, Vue 3, TypeScript, PostCSS and TailwindCSS).
+
 ## Setup
 
 Make sure to install the dependencies
