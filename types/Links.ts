@@ -1,21 +1,22 @@
-export interface NavItem {
+export interface Link {
+  link: string;
+  rel?: string;
+  target?: string;
+}
+
+export interface LinkLabel {
   text: string;
   ariaLabel?: string;
 }
 
-export interface NavGroup<T> extends NavItem {
+export interface LinkGroup<T> extends LinkLabel {
   children: T[];
 }
 
-export interface NavLink<T> extends NavItem {
-  link: string;
-  rel?: string;
-  target?: string;
-  children?: T[]; // TODO: This omits TS errors, but is not technically correct.
-}
-
+export type LabelledLink = Link & LinkLabel;
+export type NavLink<T> = Link & LinkLabel & { children?: T[] };
 export type NavigationItem = NavLink<any>;
-export type NavigationGroup = NavGroup<NavigationGroup | NavigationItem>;
+export type NavigationGroup = LinkGroup<NavigationGroup | NavigationItem>;
 export type NavigationMenu = (NavigationItem | NavigationGroup)[];
 
 export const ExampleData: NavigationMenu = [

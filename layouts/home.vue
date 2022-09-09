@@ -31,7 +31,7 @@
 
 <style lang="postcss">
 .layout.home {
-      @apply container max-w-md mx-auto text-center py-2 md:py-4 lg:py-8;
+      @apply container max-w-xl mx-auto text-center px-4 py-8 h-full;
   
       .header {
         .avatar {
