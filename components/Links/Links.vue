@@ -12,14 +12,12 @@
           &.navText {
             @apply font-semibold leading-8;
           }
-          &.navLink {
-            @apply text-blue-600 underline decoration-dotted;
-          }
         }
       }
     }
 
     >.navGroup {
+      @apply grid gap-4 md:grid-cols-3;
       >.navList {
         @apply mb-4;
         &:last-child {

@@ -32,4 +32,4 @@ Then, put it on a webserver. The real pros put it on the server with `rsync`:
 rsync -avz --delete dist/ username@some-server:/var/www/domains/example.com
 ```
 
-You could also use third-party hosting for it. For example, Vercel, Netlify, or Heroku.
+You could also use third-party hosting for it. For example, Vercel, Netlify, or Heroku. You can also put your build on a 1,44M diskette. Pro tip: be sure to bundle and compress it with `tar cJf` :wink:.
