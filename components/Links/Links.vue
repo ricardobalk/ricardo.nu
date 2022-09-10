@@ -7,6 +7,7 @@
     @apply leading-7;
     
     .navGroup {
+      @apply whitespace-nowrap break-inside-avoid;
       .navList {
         .navItem{
           &.navText {
@@ -17,12 +18,9 @@
     }
 
     >.navGroup {
-      @apply grid gap-4 md:grid-cols-3;
+      @apply flex gap-6 sm:gap-4 justify-center flex-wrap;
       >.navList {
-        @apply mb-4;
-        &:last-child {
-          @apply mb-0;
-        }
+        @apply flex-1;
       }
     }
   }

@@ -10,6 +10,7 @@
         <h1 class="title">
           <slot name="title">Page title</slot>
         </h1>
+
         <h2 class="subtitle">
           <slot name="subtitle">Subtitle</slot>
         </h2>
@@ -31,11 +32,13 @@
 
 <style lang="postcss">
 .layout.home {
-      @apply container max-w-xl mx-auto text-center px-4 py-8 h-full;
+      @apply container max-w-xl mx-auto text-center p-8 h-full;
   
       .header {
+        @apply mb-4 sm:mb-8;
+
         .avatar {
-          @apply mb-2;
+          @apply mb-4 sm:mb-2;
   
           img {
             @apply w-32 h-32 rounded-full mx-auto object-cover;
@@ -47,15 +50,15 @@
         }
 
         .title {
-          @apply text-2xl font-bold;
+          @apply text-xl sm:text-2xl font-bold;
         }
   
         .subtitle {
-          @apply text-lg;
+          @apply text-sm sm:text-lg;
         }
 
         .description {
-          @apply text-sm mb-4;
+          @apply text-xs sm:text-sm mb-4;
         }
       }
     }
