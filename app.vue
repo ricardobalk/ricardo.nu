@@ -10,12 +10,12 @@
   @tailwind utilities;
 
   #app {
-    @apply min-h-screen flex md:items-center font-sans bg-slate-200;
+    @apply min-h-screen sm:flex sm:items-center font-sans bg-green-100;
     @apply dark:bg-zinc-900 dark:text-gray-100;
   }
 
   a {
-    @apply text-blue-600 hover:text-blue-800 transition-colors underline decoration-dotted;
-    @apply dark:text-blue-600 dark:hover:text-blue-400;
+    @apply text-green-600 hover:text-green-800 transition-colors underline decoration-dotted;
+    @apply dark:text-green-400 dark:hover:text-green-600;
   }
 </style>
