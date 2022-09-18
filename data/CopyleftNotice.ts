@@ -10,7 +10,7 @@ export const Data: CopyleftNoticeData = {
   },
   repository: {
     text: "GitHub",
-    link: "https://github.com/RicardoBalk/ricardo.nu/fork",
+    link: "https://github.com/RicardoBalk/ricardo.nu",
     ariaLabel: "GitHub repository of this website.",
     target: "_blank",
     rel: "noopener noreferrer"
