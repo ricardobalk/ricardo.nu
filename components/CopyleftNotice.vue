@@ -21,8 +21,7 @@
 <style lang="postcss">
   .copyleft {
     @apply text-center text-gray-500 text-sm my-8;
-    @apply dark:text-green-200;
-    @apply transition-opacity dark:opacity-50 dark:hover:opacity-100;
+    @apply dark:text-gray-400;
 
     a {
       @apply dark:text-green-500 dark:hover:text-green-700;
