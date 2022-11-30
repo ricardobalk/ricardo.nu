@@ -5,3 +5,6 @@ nuxt.d.ts
 .output
 dist
 .DS_Store
+.vercel
+.env
+.env.local

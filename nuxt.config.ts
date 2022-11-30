@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   target: 'static',
@@ -14,4 +14,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
 });
