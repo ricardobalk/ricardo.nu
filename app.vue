@@ -9,13 +9,16 @@
   @tailwind components;
   @tailwind utilities;
 
+  html {
+    background: #333 url('/images/bg-dark.webp') no-repeat center center fixed;
+    background-size: cover;
+  }
+
   #app {
-    @apply min-h-screen sm:flex sm:items-center font-sans bg-green-100;
-    @apply dark:bg-zinc-900 dark:text-gray-100;
+    @apply min-h-screen sm:flex sm:items-center font-sans text-gray-100;
   }
 
   a {
-    @apply text-green-600 hover:text-green-800 transition-colors underline decoration-dotted;
-    @apply dark:text-green-400 dark:hover:text-green-600;
+    @apply text-emerald-400 hover:text-emerald-600 transition-colors underline decoration-dotted;
   }
 </style>

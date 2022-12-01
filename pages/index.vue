@@ -1,21 +1,19 @@
 <template>
-  <NuxtLayout name="home">
-    <template #title>{{ HomepageData.title }}</template>
+  <NuxtLayout name="main">
+    <template #title>
+      {{ HomepageData.title }}
+    </template>
 
-    <template #subtitle>{{ HomepageData.subtitle }}</template>
+    <template #subtitle>
+      {{ HomepageData.subtitle }}
+    </template>
 
     <template #avatar>
       <img :src="HomepageData.avatar" alt="" />
     </template>
 
-    <template #description>{{ HomepageData.description }}</template>
-
-    <template #links>
-      <Links :links="LinksData" />
-    </template>
-
-    <template #footer>
-      <CopyleftNotice :links="CopyleftData" />
+    <template #side-image>
+      <img src="/images/selfie.webp" class="image" />
     </template>
   </NuxtLayout>
 </template>
