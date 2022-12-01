@@ -20,11 +20,10 @@
 
 <style lang="postcss">
   .copyleft {
-    @apply text-center text-gray-500 text-sm my-8;
-    @apply dark:text-gray-400;
+    @apply text-center text-gray-200 text-sm my-8;
 
     a {
-      @apply dark:text-green-500 dark:hover:text-green-700;
+      @apply text-green-500 hover:text-emerald-200;
     }
   }
 </style>
