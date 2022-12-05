@@ -1,34 +1,53 @@
-export const Data = [
+import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+
+import type { LabelledLink } from "@/types/Links";
+
+export type SocialLink = LabelledLink & {
+  icon: [IconPrefix, IconName];
+};
+
+export type SocialLinks = SocialLink[];
+
+export const Data : SocialLinks = [
   {
-    label: "GitHub",
+    text: "GitHub",
     link: "https://github.com/RicardoBalk",
+    target: "_blank",
+    rel: "noopener",
     icon: ["fab", "github"],
   },
   {
-    label: "Twitter",
+    text: "Twitter",
     link: "https://twitter.com/RicardoBalk",
+    target: "_blank",
+    rel: "noopener",
     icon: ["fab", "twitter"],
   },
   {
-    label: "Dev.to",
+    text: "Dev.to",
     link: "https://dev.to/@RicardoBalk",
+    target: "_blank",
+    rel: "noopener",
     icon: ["fab", "dev"],
   },
   {
-    label: "LinkedIn",
+    text: "LinkedIn",
     link: "https://www.linkedin.com/in/ricardobalk/",
+    target: "_blank",
+    rel: "noopener",
     icon: ["fab", "linkedin"],
   },
   {
-    label: "Telephone",
+    text: "Telephone",
     link: "tel:+31243010005",
+    rel: "",
     icon: ["fas", "phone"],
   },
   {
-    label: "Email",
+    text: "Email",
     link: "/contact",
     icon: ["fas", "envelope"],
   },
-]
+];
 
 export default Data;
