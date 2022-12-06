@@ -64,7 +64,7 @@ export const encryptMessage = async ({publicKey, message}: encryptMessageOptions
 
 export interface fetchPublicKeyOptions{
   source?: 'local' | 'remote'; // Source of the public key, local or remote. Default is 'remote'.
-  remoteEndpoint?: string;     // Remote endpoint to fetch the public key from, if source is remote. Default is 'https://ricardo.nu/pubkey.asc'
+  remoteEndpoint?: string;     // Remote endpoint to fetch the public key from, if source is remote. Default is 'https://ricardo.nu/files/pubkey.asc'
   useFallback?: boolean;       // Whether to use a fallback public key if the remote endpoint fails. Default is true.
 }
 
@@ -72,18 +72,18 @@ export interface fetchPublicKeyOptions{
  * This function fetches the public key used to encrypt messages.
  * @param {object} options The options object.
  * @param {string} options.source The source of the public key, local or remote. Default is 'remote'.
- * @param {string} options.remoteEndpoint The remote endpoint to fetch the public key from, if source is remote. Default is '/pubkey.asc'
+ * @param {string} options.remoteEndpoint The remote endpoint to fetch the public key from, if source is remote. Default is '/files/pubkey.asc'
  * @param {boolean} options.useFallback Whether to use a fallback public key if the remote endpoint fails. Default is true.
  * @returns {Promise<string>} The public key.
  * @throws {Error} If the public key could not be fetched, and useFallback is false.
  * @example
  * const publicKey = await fetchPublicKey();
  * const publicKey = await fetchPublicKey({source: 'local'});
- * const publicKey = await fetchPublicKey({source: 'remote', remoteEndpoint: 'https://ricardo.nu/pubkey.asc'});
- * const publicKey = await fetchPublicKey({source: 'remote', remoteEndpoint: 'https://ricardo.nu/pubkey.asc', useFallback: false});
+ * const publicKey = await fetchPublicKey({source: 'remote', remoteEndpoint: 'https://ricardo.nu/files/pubkey.asc'});
+ * const publicKey = await fetchPublicKey({source: 'remote', remoteEndpoint: 'https://ricardo.nu/files/pubkey.asc', useFallback: false});
  */
 
-export const fetchPublicKey = async ({ source = 'remote', remoteEndpoint = '/pubkey.asc', useFallback = true } : fetchPublicKeyOptions = {}) => {
+export const fetchPublicKey = async ({ source = 'remote', remoteEndpoint = '/files/pubkey.asc', useFallback = true } : fetchPublicKeyOptions = {}) => {
   const fallbackValue = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEWko5fBYJKwYBBAHaRw8BAQdAW8Z1e64iUZf6H2tX53Gd0zeFDpM8OcbVLAMg
