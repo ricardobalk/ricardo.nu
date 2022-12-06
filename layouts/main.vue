@@ -58,6 +58,10 @@
                 <NuxtLink class="button type-1" to="/contact">
                   Drop me an email
                 </NuxtLink>
+
+                <NuxtLink class="button type-2" to="/files/RicardoBalk_CV_EN.pdf" rel="noopener" target="_blank" :external="true" download>
+                  Download my CV
+                </NuxtLink>
               </div>
               <!-- End Contact buttons -->
 
