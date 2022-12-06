@@ -14,14 +14,18 @@
           <hr class="line" />
             <slot>
               <div class="occupation">
-                <div class="text-sm font-bold flex items-center justify-center lg:justify-start gap-2">
-                  <FontAwesomeIcon :icon="faSuitcase" class="text-emerald-400" />
-                  <span>Independent</span>
+                <div class="labelled-icon">
+                  <span class="icon">
+                    <FontAwesomeIcon :icon="['fas', 'suitcase']" />
+                  </span>
+                  <span class="label">Independent</span>
                 </div>
 
-                <div class="text-xs lg:text-sm flex items-center justify-center lg:justify-start font-bold gap-2">
-                  <FontAwesomeIcon :icon="faGlobe" class="text-emerald-400" />
-                  <span>Benelux &amp; DACH region</span>
+                <div class="labelled-icon">
+                  <span class="icon">
+                    <FontAwesomeIcon :icon="['fas', 'globe']" />
+                  </span>
+                  <span class="label">Benelux &amp; DACH region</span>
                 </div>
               </div>
 
@@ -59,12 +63,19 @@
 
               <!-- Social links -->
               <div class="social-links">
-                <NuxtLink v-for="(link, index) in SocialLinks" :to="link.link" :key="`social-link-${index + 1}`"
-                  class="social-link">
+                <NuxtLink v-for="(link, index) in SocialLinks"
+                  :key="`social-link-${index + 1}`"
+                  :to="link.link"
+                  :target="link.target"
+                  :rel="link.rel"
+                  class="social-link"
+                  :title="link.text"
+                  >
                   <FontAwesomeIcon :icon="link.icon" class="icon" />
                 </NuxtLink>
               </div>
-              <!-- End Social links-->
+              <!-- End Social links -->
+
             </slot>
         </div>
 
@@ -87,11 +98,11 @@
 
   .content {
     @apply relative flex flex-col-reverse items-center lg:flex-row lg:items-stretch;
-    @apply max-w-screen-lg m-8 md:m-16 lg:backdrop-blur-sm rounded-lg;
+    @apply max-w-screen-lg md:m-8 lg:backdrop-blur-sm rounded-lg;
     @apply bg-black bg-opacity-70;
 
     .left {
-      @apply relative flex flex-col gap-6 p-8 pt-16 md:p-10 rounded-l-lg text-center lg:text-left w-full lg:w-4/6 lg:mx-0;
+      @apply relative flex flex-col gap-6 p-8 pt-16 lg:p-10 rounded-l-lg text-center lg:text-left w-full lg:w-4/6 lg:mx-0;
 
       .title {
         @apply text-3xl font-bold pt-8 lg:pt-0;
@@ -106,11 +117,20 @@
       }
 
       .occupation {
-        @apply flex flex-col lg:flex-row gap-4;
+        @apply flex flex-row flex-wrap justify-center lg:justify-start gap-4;
+        .labelled-icon {
+          @apply text-sm flex items-center justify-center lg:justify-start gap-2;
+          .icon {
+            @apply text-emerald-400 w-5 h-5;
+          }
+          .label {
+            @apply font-bold;
+          }
+        }
       }
 
       .story {
-        @apply flex flex-col gap-4 text-sm;
+        @apply flex flex-col gap-4 text-sm text-justify;
       }
 
       .contact-buttons {
@@ -150,7 +170,6 @@
     }
   }
 
-
 }
 </style>
 
@@ -159,12 +178,6 @@ import { useSlots } from 'vue';
 import SocialLinks from '@/data/SocialLinks';
 import CopyleftNotice from '@/components/CopyleftNotice.vue';
 import { Data as CopyleftData } from '@/data/CopyleftNotice';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGlobe, faSuitcase } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-library.add(faSuitcase, faGlobe);
 
 const hasSlot = (name: string): boolean => !!useSlots()[name];
 </script>
