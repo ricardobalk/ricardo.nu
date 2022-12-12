@@ -20,20 +20,22 @@
 
 <script lang="ts">
   import Links from '@/components/Links/Links.vue';
-  import CopyleftNotice from '@/components/CopyleftNotice.vue';
-  
+
   import { Data as HomepageData } from '@/data/Home';
   import { Data as LinksData } from '@/data/Links';
-  import { Data as CopyleftData } from '@/data/CopyleftNotice';
 
   export default defineComponent({
     components: {
       Links,
-      CopyleftNotice,
     },
     setup() {
-      return { LinksData, CopyleftNotice, HomepageData, CopyleftData };
+      return { LinksData, HomepageData };
     },
     layout: false,
+  });
+
+  definePageMeta({
+    title: 'Home',
+    keywords: 'ricardo balk, ricardobalk, developer, frontend, backend, fullstack, information, contact',
   });
 </script>
