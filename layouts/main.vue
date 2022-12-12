@@ -12,59 +12,61 @@
           </h2>
 
           <hr class="line" />
-            <slot>
-              <div class="occupation">
-                <div class="labelled-icon">
-                  <span class="icon">
-                    <FontAwesomeIcon :icon="['fas', 'suitcase']" />
-                  </span>
-                  <span class="label">Independent</span>
-                </div>
 
-                <div class="labelled-icon">
-                  <span class="icon">
-                    <FontAwesomeIcon :icon="['fas', 'globe']" />
-                  </span>
-                  <span class="label">Benelux &amp; DACH region</span>
-                </div>
+          <NuxtLink v-if="hasParentRoute" :to="parentRoute.fullPath" class="back-button">
+            &larr; Back to {{ parentRoute.meta.title || parentRoute.name }}
+          </NuxtLink>
+
+          <slot>
+            <div class="occupation">
+              <div class="labelled-icon">
+                <span class="icon">
+                  <FontAwesomeIcon :icon="['fas', 'suitcase']" />
+                </span>
+                <span class="label">Independent</span>
               </div>
-
-              <div class="story">
-                <slot name="story">
+          
+              <div class="labelled-icon">
+                <span class="icon">
+                  <FontAwesomeIcon :icon="['fas', 'globe']" />
+                </span>
+                <span class="label">Benelux &amp; DACH region</span>
+              </div>
+            </div>
+          
+            <div class="story">
+              <slot name="story">
+                <div class="text">
                   <p>
                     I'm Ricardo — a web developer
                     passionate about tech, creating beautiful user interfaces and writing
                     clean &amp; re-usable code.
                   </p>
-
                   <p>I have a background in graphic design
                     and am currently working as a full stack developer (Laravel / Vue) with
                     a strong focus on design/user experience. I love working on challenging
                     projects, like web applications that integrate with modern
                     technologies: Vue, React, TypeScript, CI/CD, Docker, Golang, APIs, etc.
                   </p>
-
                   <p>
                     During
                     my spare time, I contribute to open-source projects, as it empowers me
                     to explore new technologies, collaborate and learn from others. When I'm
                     not glued to my screen, I love reading a good book or going for a hike.
                   </p>
-                </slot>
-              </div>
-
-              <!-- Contact buttons -->
-              <div class="contact-buttons" v-if="true">
-                <NuxtLink class="button type-1" to="/contact">
-                  Drop me an email
-                </NuxtLink>
-
-                <NuxtLink class="button type-2" to="/files/RicardoBalk_CV_EN.pdf" rel="noopener" target="_blank" :external="true" download>
-                  Download my CV
-                </NuxtLink>
-              </div>
-              <!-- End Contact buttons -->
-
+                </div>
+          
+                <div class="contact-buttons" v-if="true">
+                  <NuxtLink class="button type-1" to="/contact">
+                    Drop me an email
+                  </NuxtLink>
+          
+                  <NuxtLink class="button type-2" to="/resume">
+                    View my resume
+                  </NuxtLink>
+                </div>
+              </slot>
+            </div>
               <!-- Social links -->
               <div class="social-links">
                 <NuxtLink v-for="(link, index) in SocialLinks"
@@ -134,7 +136,10 @@
       }
 
       .story {
-        @apply flex flex-col gap-4 text-sm text-justify;
+        @apply flex flex-col flex-1 gap-6 justify-between;
+        .text {
+          @apply flex flex-col gap-4 text-sm text-justify;
+        }
       }
 
       .contact-buttons {
@@ -142,7 +147,7 @@
       }
 
       .social-links {
-        @apply flex gap-8 px-2;
+        @apply flex gap-8 px-2 justify-center md:justify-start;
 
         .social-link {
           .icon {
@@ -184,4 +189,7 @@ import CopyleftNotice from '@/components/CopyleftNotice.vue';
 import { Data as CopyleftData } from '@/data/CopyleftNotice';
 
 const hasSlot = (name: string): boolean => !!useSlots()[name];
+const currentRoute = computed(() => useRouter().currentRoute.value);
+const parentRoute = computed(() => useRouter().resolve('../'));
+const hasParentRoute = computed(() => parentRoute.value.path !== currentRoute.value.path);
 </script>

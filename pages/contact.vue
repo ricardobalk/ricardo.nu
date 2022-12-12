@@ -5,11 +5,7 @@
     </template>
 
     <div>
-      <NuxtLink to="/" class="back-button mb-4 inline-block">
-        &larr; Back to home
-      </NuxtLink>
-
-      <ContactForm class="contact-form" />
+      <ContactForm />
     </div>
   
     <template #side-image>
@@ -29,14 +25,8 @@
 </style>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import ContactForm from '@/components/ContactForm.vue';
-
-const name = ref('');
-const email = ref('');
-const message = ref('');
-
-const submitForm = () => {
-  console.log(name.value, email.value, message.value);
-};
+  import ContactForm from '@/components/ContactForm.vue';
+  defineComponent({
+    layout: false,
+  });
 </script>

@@ -10,6 +10,12 @@ export type SocialLinks = SocialLink[];
 
 export const Data : SocialLinks = [
   {
+    text: "Telephone",
+    link: "tel:+31243010005",
+    rel: "",
+    icon: ["fas", "phone"],
+  },
+  {
     text: "GitHub",
     link: "https://github.com/RicardoBalk",
     target: "_blank",
@@ -17,11 +23,11 @@ export const Data : SocialLinks = [
     icon: ["fab", "github"],
   },
   {
-    text: "Twitter",
-    link: "https://twitter.com/RicardoBalk",
+    text: "Mastodon",
+    link: "https://mas.to/@RicardoBalk",
     target: "_blank",
     rel: "noopener",
-    icon: ["fab", "twitter"],
+    icon: ["fab", "mastodon"],
   },
   {
     text: "Dev.to",
@@ -36,12 +42,6 @@ export const Data : SocialLinks = [
     target: "_blank",
     rel: "noopener",
     icon: ["fab", "linkedin"],
-  },
-  {
-    text: "Telephone",
-    link: "tel:+31243010005",
-    rel: "",
-    icon: ["fas", "phone"],
   },
   {
     text: "Email",
